@@ -1,7 +1,8 @@
 {
   "name": "qliner",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+
+  "description": "A  Queuing system with data analysis",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
