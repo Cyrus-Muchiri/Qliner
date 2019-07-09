@@ -16,7 +16,7 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('informtiveDisplay.html')
+  mainWindow.loadFile('newhigh.html')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
