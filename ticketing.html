@@ -11,12 +11,12 @@
         </title>
     </head>
     <body>
-        <diV class="container-fluid bg-grey" >
+        <div class="container-fluid bg-grey" >
              <div class="text-center"><h1> QLINER</h1> </div>
              <div class="container-fluid" class="col-sm" class="ca -mgit ord-columns">
                  <div class="row">
                 <div class= col-md-4>
-                       <div> <a href="" class="custom-card">
+                       <div id="service"> <a href="" class="custom-card">
                                 <div class="card p-4 bg-light" style="width: 18rem; display: inline-block">
                                      <div class="card-body">
                                  
@@ -87,7 +87,27 @@
                     </div>
                 </div> </div>
                     
-        </diV>
+        </div>
+        <script>
+            const electron = require('electron')
+            const path = require('path');
+            const BrowserWindow = electron.remote.BrowserWindow
+
+            const serviceButton = document.getElementById('service')
+            serviceButton.addEventListener('click', function (event) {
+                const modalPath = path.join('file://', __dirname, 'mobileNumber.html')
+                console.log(modalPath);
+                let win = new BrowserWindow({
+                    modal: true,
+                    webPreferences: {
+                        nodeIntegration: true
+                    }
+                });
+                win.on('close', function () { win = null })
+                win.loadURL(modalPath)
+                win.show()
+            });
+        </script>
 
 
         <footer>
