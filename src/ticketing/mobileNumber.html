@@ -16,18 +16,28 @@
 
 
     <div class="row">
+        <div class="col-sm-12">
+            <form id="mobileForm">
+                <div class="form-group">
+                    <label for="mobilePhone">Phone Number</label>
+                    <input type="text" class="form-control" id="mobilePhone" placeholder="mobile">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your mobile phone with anyone else.</small>
+                </div>
 
-        <form id="mobileForm">
-            <div class="form-group">
-                <label for="mobilePhone">Phone Number</label>
-                <input type="text" class="form-control" id="mobilePhone" placeholder="mobile">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your mobile phone with anyone else.</small>
+                <button  class="btn btn-primary" onclick="submitMobile();">Submit</button>
+            </form>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="alert " id="response" style="display: none">
+
             </div>
+        </div>
 
-            <button  class="btn btn-primary" onclick="submitMobile();">Submit</button>
-        </form>
+    </div>
 
-</div>
 </div>
 
 
