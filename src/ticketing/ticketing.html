@@ -1,12 +1,12 @@
 <html>
-    <head>
+<head>
 
-        <!-- bootstrap -->
-        <link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap-grid.css">
-        <link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.css">
-        <link rel="stylesheet" href="bower_components\bootstrap\dist\css\bootstrap.min.css">
-        <!-- End bootsrap -->
-        <title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- End bootsrap -->
+    <title>
 
         </title>
     </head>
@@ -20,7 +20,7 @@
                                 <div class="card p-4 bg-light" style="width: 18rem; display: inline-block">
                                      <div class="card-body">
                                  
-                                    <p class="card-text"><h3>SERVICE 1</h3></p>
+                                    <p class="card-text"><h3>Enquiries</h3></p>
                                   </div>
                                 </div>
                             </a>
@@ -30,7 +30,7 @@
                                 <div class="card p-4 bg-light" style="width: 18rem; display: inline-block">
                                      <div class="card-body">
                                  
-                                    <p class="card-text"><h3>SERVICE 2</h3></p>
+                                    <p class="card-text"><h3>Consultation</h3></p>
                                   </div>
                                 </div>
                             </a>
@@ -40,7 +40,7 @@
                                 <div class="card p-4 bg-light" style="width: 18rem; display: inline-block">
                                      <div class="card-body">
                                  
-                                    <p class="card-text"><h3>SERVICE 3</h3></p>
+                                    <p class="card-text"><h3>Pharmacy</h3></p>
                                   </div>
                                 </div>
                             </a>
@@ -57,7 +57,7 @@
                                     <div class="card p-4 bg-light" style="width: 18rem; display: inline-block">
                                          <div class="card-body">
                                      
-                                        <p class="card-text"><h3>SERVICE 4</h3></p>
+                                        <p class="card-text"><h3>Laboratory</h3></p>
                                       </div>
                                     </div>
                                 </a>
@@ -67,7 +67,7 @@
                                     <div class="card p-4 bg-light" style="width: 18rem; display: inline-block">
                                          <div class="card-body">
                                      
-                                        <p class="card-text"><h3>SERVICE 5</h3></p>
+                                        <p class="card-text"><h3>Accidents & Emergency</h3></p>
                                       </div>
                                     </div>
                                 </a>
@@ -77,7 +77,7 @@
                                     <div class="card p-4 bg-light" style="width: 18rem; display: inline-block">
                                          <div class="card-body">
                                      
-                                        <p class="card-text"><h3>SERVICE 6</h3></p>
+                                        <p class="card-text"><h3>Peadtrics</h3></p>
                                       </div>
                                     </div>
                                 </a>
@@ -88,30 +88,19 @@
                 </div> </div>
                     
         </div>
-        <script>
-            const electron = require('electron')
-            const path = require('path');
-            const BrowserWindow = electron.remote.BrowserWindow
-
-            const serviceButton = document.getElementById('service')
-            serviceButton.addEventListener('click', function (event) {
-                const modalPath = path.join('file://', __dirname, 'mobileNumber.html')
-                console.log(modalPath);
-                let win = new BrowserWindow({
-                    modal: true,
-                    webPreferences: {
-                        nodeIntegration: true
-                    }
-                });
-                win.on('close', function () { win = null })
-                win.loadURL(modalPath)
-                win.show()
-            });
-        </script>
-
-
+        <!--controller script-->
+        <script src="ticketing.js" type="application/javascript"></script>
         <footer>
-            
+
+            <script src="../../bower_components/bootstrap/js/src/alert.js" type="text/javascript"></script>
+            <script src="../../bower_components/bootstrap/js/src/button.js" type="text/javascript"></script>
+            <script src="../../bower_components/bootstrap/js/src/dropdown.js" type="text/javascript"></script>
+            <script src="../../bower_components/bootstrap/dist/js/bootstrap.bundle.js" type="text/javascript"></script>
+            <script src="../../bower_components/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
+            <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+            <script src="" type="text/javascript"></script>
+
+
         </footer>
     </body>
 

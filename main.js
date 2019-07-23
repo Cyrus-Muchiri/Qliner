@@ -8,13 +8,14 @@ function createWindow () {
     width: 1400,
     height: 1000,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      webSecurity:false
     }
   })
 
   // and load the index.html of the app.
 
-  mainWindow.loadFile('welcome.html')
+  mainWindow.loadFile('src/welcome/welcome.html')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
