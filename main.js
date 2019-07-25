@@ -45,7 +45,18 @@ app.on('activate', function () {
   // On macOS it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) createWindow()
-})
+});
 
+const ipcMain =  require('electron').ipcMain;
+const window = require('electron').BrowserWindow;
+
+/*send service id to mobile number renderer process*/
+ipcMain.on('service_id', function(event, service_id) {
+ /* console.log(data) // this properly shows the data
+  let focusedWindow    = window.getFocusedWindow();
+  focusedWindow.webContents.send('notes2', data);
+*/
+global.service_id = service_id});
+//
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
