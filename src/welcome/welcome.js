@@ -31,8 +31,13 @@ insightsButton.addEventListener('click', function (event) {
 });
 const displayButton = document.getElementById('display')
 displayButton.addEventListener('click', function (event) {
-    const modalPath = path.join('file://', __dirname, '../queuingDisplay/informativeDisplay.html')
-    let win = new BrowserWindow({ width: 1200, height: 700 })
+    const modalPath = path.join('file://', __dirname, '../queueingDisplay/informativeDisplay.html')
+    let win = new BrowserWindow({
+    
+         width: 1400,
+         height: 900,
+        
+    });
     win.on('close', function () { win = null })
     win.loadURL(modalPath)
     win.show()
