@@ -7,7 +7,7 @@
     "start": "electron ."
   },
   "directories": {
-    "output" : "release/"
+    "output": "release/"
   },
   "repository": "https://github.com/Cyrus-Muchiri/Qliner.git",
   "keywords": [
@@ -26,6 +26,7 @@
     "bootstrap": "^4.3.1",
     "bower": "^1.8.8",
     "highcharts": "^7.1.2",
+    "highcharts-export-server": "^2.0.24",
     "jquery": "^3.4.1"
   }
 }
