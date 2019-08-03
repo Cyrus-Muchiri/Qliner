@@ -7,8 +7,7 @@ ticketingButton.addEventListener('click', function (event) {
     const modalPath = path.join('file://', __dirname, '../ticketing/ticketing.html');
     console.log(modalPath);
     let win = new BrowserWindow({
-        width: 1200,
-        height: 700,
+
         webPreferences:{
             nodeIntegration:true,
             webSecurity:false
@@ -36,9 +35,24 @@ displayButton.addEventListener('click', function (event) {
     const modalPath = path.join('file://', __dirname, '../queueingDisplay/informativeDisplay.html')
     let win = new BrowserWindow({
     
-         width: 1400,
-         height: 900,
+
         
+    });
+    win.on('close', function () { win = null })
+    win.loadURL(modalPath)
+    win.maximize()
+    win.show()
+});
+const serverButton = document.getElementById('server')
+serverButton.addEventListener('click', function (event) {
+    const modalPath = path.join('file://', __dirname, '../server/server.html')
+    let win = new BrowserWindow({
+        webPreferences:{
+            nodeIntegration:true,
+            webSecurity:false
+
+        }
+
     });
     win.on('close', function () { win = null })
     win.loadURL(modalPath)
