@@ -7,7 +7,7 @@
     "start": "electron ."
   },
   "directories": {
-    "output" : "release/"
+    "output": "release/"
   },
   "repository": "https://github.com/Cyrus-Muchiri/Qliner.git",
   "keywords": [

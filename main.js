@@ -12,7 +12,7 @@ function createWindow () {
       webSecurity:false
     }
   })
-
+  mainWindow.maximize()
   // and load the index.html of the app.
 
   mainWindow.loadFile('src/welcome/welcome.html')

@@ -16,6 +16,10 @@ ticketingButton.addEventListener('click', function (event) {
         }
     })
     win.on('close', function () { win = null });
+<<<<<<< HEAD
+=======
+    win.maximize();
+>>>>>>> 24032521a9fcd1d0297174bd08e9d6906a379791
     win.loadURL(modalPath);
     win.show()
 });
@@ -27,6 +31,10 @@ insightsButton.addEventListener('click', function (event) {
     })
     win.on('close', function () { win = null })
     win.loadURL(modalPath)
+<<<<<<< HEAD
+=======
+    win.maximize();
+>>>>>>> 24032521a9fcd1d0297174bd08e9d6906a379791
     win.show()
 });
 const displayButton = document.getElementById('display')
@@ -40,5 +48,9 @@ displayButton.addEventListener('click', function (event) {
     });
     win.on('close', function () { win = null })
     win.loadURL(modalPath)
+<<<<<<< HEAD
+=======
+    win.maximize()
+>>>>>>> 24032521a9fcd1d0297174bd08e9d6906a379791
     win.show()
 });
