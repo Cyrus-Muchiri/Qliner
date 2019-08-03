@@ -7,60 +7,82 @@
     <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- End bootsrap -->
+    <!--font awesome-->
 
     <title>
 
     </title>
+    <link rel="stylesheet" href="../../bower_components/components-font-awesome/css/all.css">
+    <link rel="stylesheet" href="../../bower_components/components-font-awesome/css/fontawesome.css">
+    <link rel="stylesheet" href="../../bower_components/components-font-awesome/css/brands.css">
+    <link rel="stylesheet" href="../../bower_components/components-font-awesome/css/svg-with-js.css">
 </head>
 <body background="">
 
 <div class="container-fluid">
 
 
+
     <div class="row" style="top: 300px; position:absolute; width: 100%  ">
 
-        <!--Category One Queue-->
-        <div class="col-md-4">
-            <div class="card bg">
-                <div class="header">
-                    Ticketing
-                </div>
+        <div class="col-md-3">
+            <a id="ticketing" style="cursor: pointer">
+                <div class="card text-white bg-primary">
 
-                <div class="card-body">
-                    <div class="card-title"> Click on this button to proceed to ticketing </div>
-                    <a class="btn btn-primary" id="ticketing">Ticketing</a>
-                </div>
-            </div>
-         </div>
-        <!--Video-->
-        <div class="col-md-4">
-            <div class="card">
-                <div class="header">
-                    Informative Display
-                </div>
+                    <div class="card-body">
+                        <i class="fas fa-receipt fa-9x"></i>
 
-                <div class="card-body">
-                    <div class="card-title">  Click on this button to proceed to Informative Display </div>
-                    <a class="btn btn-primary" id="display">Queueing Display</a>
+
+
+                        <h1>Ticketing </h1>
+
+                    </div>
                 </div>
-            </div>
+            </a>
 
         </div>
-        <!--End of video-->
-        <!--Category two queue-->
-        <div class="col-md-4">
-            <div class="card">
-                <div class="header">
-                   Insights Portal
-                </div>
+        <div class="col-md-3">
+            <a id="display" style="cursor: pointer">
+                <div class="card text-white bg-secondary">
 
-                <div class="card-body">
-                    <div class="card-title">Click on this button to proceed to Insights portal </div>
-                    <a class="btn btn-primary" id="insights">Insights</a>
+                    <div class="card-body">
+                        <i class="fas fa-desktop fa-9x"></i>
+
+                        <h1> Display</h1>
+                    </div>
                 </div>
-            </div>
+            </a>
 
         </div>
+
+        <div class="col-md-3">
+            <a id="server" style="cursor: pointer">
+                <div class="card text-white bg-dark">
+
+                    <div class="card-body">
+                        <i class="fas fa-user-md fa-9x"></i>
+
+                        <h1>Server</h1>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="col-md-3">
+            <a id="insights" style="cursor: pointer">
+            <div class="card text-white bg-info">
+
+                <div class="card-body">
+                    <i class="fas fa-chart-pie fa-9x"></i>
+
+                    <h1>Insights</h1>
+                </div>
+            </div>
+            </a>
+
+        </div>
+
 
     </div>
 

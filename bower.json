@@ -1,0 +1,23 @@
+{
+  "name": "qliner",
+  "description": "A  Queuing system with data analysis",
+  "main": "main.js",
+  "authors": [
+    "Cyrus Muchiri",
+    "Stanley Mandela"
+  ],
+  "license": "CC0-1.0",
+  "keywords": [
+    "queueing",
+    "informative",
+    "predictive"
+  ],
+  "homepage": "https://github.com/Cyrus-Muchiri/Qliner",
+  "dependencies": {
+    "ajax": "^3.0.4",
+    "bootstrap": "^4.3.1",
+    "highcharts": "^7.1.2",
+    "components-font-awesome": "^5.9.0",
+    "jquery": "^3.4.1"
+  }
+}

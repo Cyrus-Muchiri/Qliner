@@ -16,6 +16,7 @@ ticketingButton.addEventListener('click', function (event) {
         }
     })
     win.on('close', function () { win = null });
+    win.maximize();
     win.loadURL(modalPath);
     win.show()
 });
@@ -27,6 +28,7 @@ insightsButton.addEventListener('click', function (event) {
     })
     win.on('close', function () { win = null })
     win.loadURL(modalPath)
+    win.maximize();
     win.show()
 });
 const displayButton = document.getElementById('display')
@@ -40,5 +42,6 @@ displayButton.addEventListener('click', function (event) {
     });
     win.on('close', function () { win = null })
     win.loadURL(modalPath)
+    win.maximize()
     win.show()
 });
