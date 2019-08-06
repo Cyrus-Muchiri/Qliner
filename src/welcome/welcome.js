@@ -45,7 +45,7 @@ displayButton.addEventListener('click', function (event) {
 });
 const serverButton = document.getElementById('server')
 serverButton.addEventListener('click', function (event) {
-    const modalPath = path.join('file://', __dirname, '../server/server.html')
+    const modalPath = path.join('file://', __dirname, '../server/createServerInstance.html')
     let win = new BrowserWindow({
         webPreferences:{
             nodeIntegration:true,

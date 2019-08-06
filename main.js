@@ -52,11 +52,12 @@ const window = require('electron').BrowserWindow;
 
 /*send service id to mobile number renderer process*/
 ipcMain.on('service_id', function(event, service_id) {
- /* console.log(data) // this properly shows the data
-  let focusedWindow    = window.getFocusedWindow();
-  focusedWindow.webContents.send('notes2', data);
-*/
+
 global.service_id = service_id});
+
+ipcMain.on('service_details', function(event, service_details) {
+
+  global.service_details = service_details});
 //
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
