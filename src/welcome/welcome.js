@@ -5,14 +5,14 @@ const BrowserWindow = electron.remote.BrowserWindow;
 const ticketingButton = document.getElementById('ticketing');
 ticketingButton.addEventListener('click', function (event) {
     const modalPath = path.join('file://', __dirname, '../ticketing/ticketing.html');
-    console.log(modalPath);
     let win = new BrowserWindow({
 
         webPreferences:{
             nodeIntegration:true,
-            webSecurity:false
+            webSecurity:false,
 
         }
+
     })
     win.on('close', function () { win = null });
     win.maximize();
@@ -34,13 +34,17 @@ const displayButton = document.getElementById('display')
 displayButton.addEventListener('click', function (event) {
     const modalPath = path.join('file://', __dirname, '../queueingDisplay/informativeDisplay.html')
     let win = new BrowserWindow({
-    
+    webPreferences : {
+        nodeIntegration:true,
+        webSecurity:false
+    }
 
         
     });
     win.on('close', function () { win = null })
     win.loadURL(modalPath)
     win.maximize()
+    win.webContents.id = 1;
     win.show()
 });
 const serverButton = document.getElementById('server')
@@ -56,6 +60,7 @@ serverButton.addEventListener('click', function (event) {
     });
     win.on('close', function () { win = null })
     win.loadURL(modalPath)
-    win.maximize()
+    win.maximize();
+    win.webContents.id = 2;
     win.show()
 });

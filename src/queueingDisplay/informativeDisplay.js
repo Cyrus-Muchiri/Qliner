@@ -129,3 +129,11 @@ window.onload =  function initialize() {
         }
     }
 };
+const ipc = require('electron').ipcRenderer
+
+
+ipc.on('next', function (event,text) {
+    var ae_card = document.getElementById('accidents_emergencies');
+    ae_card.innerHTML = "<h4>"+text+"</h4>";
+});
+

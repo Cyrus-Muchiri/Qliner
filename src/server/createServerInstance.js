@@ -11,7 +11,9 @@ function newService(service) {
         let win = new BrowserWindow({
             modal: true,
             webPreferences: {
-                nodeIntegration: true
+                nodeIntegration: true,
+                webSecurity:false
+
             }
 
         });

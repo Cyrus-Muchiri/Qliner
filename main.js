@@ -54,6 +54,9 @@ const window = require('electron').BrowserWindow;
 ipcMain.on('service_id', function(event, service_id) {
 
 global.service_id = service_id});
+ipcMain.on('ser', function(event, service_id) {
+
+    global.service_id = service_id});
 
 ipcMain.on('service_details', function(event, service_details) {
 

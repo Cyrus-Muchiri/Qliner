@@ -1,6 +1,6 @@
-const {electron, remote} = require('electron');
-const service_id = 0;
-window.onload = function () {
+const {electron,remote} = require('electron');
+
+ window.onload = function () {
     var service_details = remote.getGlobal('service_details');
     var service_id = service_details['service_id'];
     var service_name = service_details['service'];
@@ -33,6 +33,11 @@ window.onload = function () {
 }
 
 function nextCustomer() {
+    const ipc = require('electron').ipcRenderer
+    ipc.send('ser',"Hey rus");
+
+    //1 : display 2: server
+   // ipc.sendTo(1,'next',"Men");
     //refresh table
     //refresh display
     //mark prev customer served
