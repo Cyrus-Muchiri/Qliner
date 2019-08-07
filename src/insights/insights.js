@@ -1,0 +1,78 @@
+var server_utilizations;
+window.onload = function () {
+    var start_Date = "2019-07-31";
+    var end_Date = "2019-07-31";
+
+    var response;
+    var request = new XMLHttpRequest();
+    request.open("POST", 'http://localhost/qliner_api/insights/getInsights');
+    request.setRequestHeader('Content-Type', 'application/json');
+    let data = JSON.stringify({
+        "start_date" : start_Date,
+        "end_date" : end_Date
+    });
+    request.send(data);
+
+    request.onreadystatechange = (e) => {
+        response = JSON.parse(request.responseText);
+       //response = request.responseText;
+        var server_utilizations;
+       if (response.status  == "true"){
+          server_utilizations = response.server_utilization;
+       }
+        var categories = [];
+        var utils= [];
+
+            for (var i = 0; i < server_utilizations.length; i++) {
+                utils.push([server_utilizations[i].utilizations]);
+            }
+            var ut = utils.join()
+        for (var i = 0; i < server_utilizations.length; i++) {
+            categories.push([server_utilizations[i].date]);
+        }
+            Highcharts.chart('server_utils', {
+            chart: {
+                type: 'column',
+                options3d: {
+                    enabled: true,
+                    alpha: 10,
+                    beta: 25,
+                    depth: 70
+                }
+            },
+            title: {
+                text: 'Server Utilizations'
+            },
+            subtitle: {
+                text: 'Depicts server utilizations by date'
+            },
+            plotOptions: {
+                column: {
+                    depth: 25
+                }
+            },
+            xAxis: {
+                categories: categories,
+                labels: {
+                    skew3d: true,
+                    style: {
+                        fontSize: '16px'
+                    }
+                }
+            },
+            yAxis: {
+                title: {
+                    text: null
+                }
+            },
+            series: [{
+                name: 'Server Utils',
+                data: utils
+            }]
+        });
+
+
+
+
+    };
+}
