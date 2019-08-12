@@ -41,14 +41,17 @@
 <div class="row" style="top: 300px; position:absolute; width: 100%  ">
     <div class="col-md-8">
         <div class="card p-4">
-            <i class="fas fa-server fa-6x"></i>
+                <i class="fas fa-user-md fa-5x"></i>
+
             Now serving
+          <h1 id ="now_serving"></h1>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="card p-4" onclick="nextCustomer()">
+        <div class="card p-4" onclick="nextCustomer()" style="cursor: pointer">
             <i class="fas fa-angle-double-right fa-6x"></i>
             Next customer
+            <h4 id="next_customer"></h4>
         </div>
     </div>
 </div>
