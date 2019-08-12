@@ -1,4 +1,5 @@
-window.onload =  function initialize() {
+window.onload =  initialize();
+function initialize() {
     var response;
     var request = new XMLHttpRequest();
     request.open("GET", 'http://localhost/qliner_api/queue/index');
@@ -136,4 +137,5 @@ ipc.on('next', function (event,text) {
     var ae_card = document.getElementById('accidents_emergencies');
     ae_card.innerHTML = "<h4>"+text+"</h4>";
 });
+var refresh = setInterval(initialize,3000);
 
