@@ -10,11 +10,14 @@ function newCustomer(service) {
         console.log(modalPath);
         let win = new BrowserWindow({
             modal: true,
-            webPreferences: {
+                webPreferences: {
                 nodeIntegration: true
-            }
-
+            },
+            width : 400,
+            height: 350,
+        
         });
+        win.setMenu(null)
         //condition to set service ids
         var service_id;
         if (service == 'pharmacy'){

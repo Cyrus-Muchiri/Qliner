@@ -26,9 +26,9 @@ function addCustomerRequest(mobile) {
     request.send(data);
 
     request.onreadystatechange = (e) => {
-    //   response = JSON.parse(request.responseText);
-      response = request.responseText;
-      console.log(response);
+      response = JSON.parse(request.responseText);
+     // response = request.responseText;
+     // console.log(response);
         var response_div = document.getElementById('response');
         response_div.style.display = 'block';
 
