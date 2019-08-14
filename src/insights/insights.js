@@ -1,8 +1,8 @@
 var server_utilizations;
 var queue_length;
 window.onload = function () {
-    var start_Date = "2019-07-23";
-    var end_Date = "2019-07-31";
+    var start_Date = "2019-08-12";
+    var end_Date = "2019-08-14";
 
     var response;
     var request = new XMLHttpRequest();
@@ -52,6 +52,11 @@ window.onload = function () {
             },
             plotOptions: {
                 column: {
+                    dataLabels:{
+                        enabled:true,
+                        crop:false,
+                        overflow: 'none'
+                    },
                     depth: 25
                 }
             },
@@ -99,13 +104,18 @@ window.onload = function () {
                 }
             },
             title: {
-                text: 'queue lengths'
+                text: 'Systen Queue Length'
             },
             subtitle: {
                 text: 'Depicts queue lengths by date'
             },
             plotOptions: {
                 column: {
+                    dataLabels:{
+                        enabled:true,
+                        crop:false,
+                        overflow: 'none'
+                    },
                     depth: 25
                 }
             },

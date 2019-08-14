@@ -6,14 +6,15 @@ function submitMobile() {
         e.preventDefault();
     });
     const mobile = document.getElementById('mobilePhone').value;
+    const emergency_code = document.getElementById('emergency').value;
     //ipc.send('service_id',service_id);
 
 
-    addCustomerRequest(mobile);
+    addCustomerRequest(mobile,emergency_code);
 
 }
 
-function addCustomerRequest(mobile) {
+function addCustomerRequest(mobile,emergency_code) {
     var response;
     var request = new XMLHttpRequest();
     request.open("POST", 'http://localhost/qliner_api/ticketing/addCustomer');
@@ -21,14 +22,15 @@ function addCustomerRequest(mobile) {
     var service = remote.getGlobal('service_id') ;
     let data =JSON.stringify({
         'mobile': mobile,
-        'service_id': service
+        'service_id': service,
+        'emergency_code':emergency_code
     });
     request.send(data);
 
     request.onreadystatechange = (e) => {
-      response = JSON.parse(request.responseText);
-     // response = request.responseText;
-     // console.log(response);
+     response = JSON.parse(request.responseText);
+ //response = request.responseText;
+      //console.log(response);
         var response_div = document.getElementById('response');
         response_div.style.display = 'block';
 

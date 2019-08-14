@@ -17,7 +17,7 @@ function newCustomer(service) {
             height: 350,
         
         });
-        win.setMenu(null)
+      //  win.setMenu(null)
         //condition to set service ids
         var service_id;
         if (service == 'pharmacy'){

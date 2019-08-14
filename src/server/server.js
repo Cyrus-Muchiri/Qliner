@@ -2,7 +2,8 @@ const {electron,remote} = require('electron');
     var now_serving;
     var next_customer;
     var service_id
- window.onload = function () {
+ window.onload = initialize();
+  function initialize() {
     var service_details = remote.getGlobal('service_details');
     service_id = service_details['service_id'];
     var service_name = service_details['service'];
@@ -19,7 +20,6 @@ const {electron,remote} = require('electron');
 
     request.onreadystatechange = (e) => {
           response = JSON.parse(request.responseText);
-           console.log(response);
        // response = request.responseText;
         //console.log(response);
 
@@ -32,6 +32,7 @@ const {electron,remote} = require('electron');
             for (var i = 0; i < customers.length; i++) {
                 if(i == 0){
                     now_serving = customers[i].ticket_no;
+                    next_customer = "none"
                 }else if(i==1){
                     next_customer = customers[i].ticket_no;
                 }
@@ -39,6 +40,8 @@ const {electron,remote} = require('electron');
             }
         } else {
                 table_data = "<td>No customers</td>";
+                now_serving = "none";
+                next_customer ="none";
         }
         tbody.innerHTML =table_data;
         now_serving_dom.innerText = now_serving;
@@ -46,12 +49,14 @@ const {electron,remote} = require('electron');
 
     };
 }
+var refresh = setInterval(initialize,3000);
 
 function nextCustomer() {
     var response;
     var request = new XMLHttpRequest();
     request.open("POST", 'http://localhost/qliner_api/service/nextCustomer');
     request.setRequestHeader('Content-Type', 'application/json');
+    console.log(next_customer);
     let data = JSON.stringify({
         "current" : now_serving,
         "next" : next_customer,
@@ -69,16 +74,20 @@ function nextCustomer() {
             var next_customer_dom = document.getElementById('next_customer');
             if (response.status == true) {
             var customers = response.customers;
+           
                 for (var i = 0; i < customers.length; i++) {
                     if(i == 0){
                         now_serving = customers[i].ticket_no;
+                        next_customer = "none";
                     }else if(i==1){
                         next_customer = customers[i].ticket_no;
                     }
                      table_data += "<tr><td>"+(i+1)+"</td><td>" + customers[i].ticket_no + "</td></tr>";
                 }
+            
             } else {
                     table_data = "<td>No customers</td>";
+                    now_serving = "none"
             }
             tbody.innerHTML =table_data;
             now_serving_dom.innerText = now_serving;
