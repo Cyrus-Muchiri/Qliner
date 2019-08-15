@@ -1,17 +1,26 @@
 var server_utilizations;
 var queue_length;
 var keys;
-window.onload = function () {
-    var start_Date = "2019-08-12";
-    var end_Date = "2019-08-15";
 
+//set initial dates
+var currentDate = new Date();
+
+var date_initial = currentDate.getDate();
+var month_initial = currentDate.getMonth(); //Be careful! January is 0 not 1
+var year_initiial = currentDate.getFullYear();
+
+var dateString_initial = year_initiial + "-0" +(month_initial + 1) + "-" + date_initial;
+start_Date_init = dateString_initial;
+end_Date_init = dateString_initial;
+window.onload =initialize (start_Date_init,end_Date_init);
+ function initialize (start_Date_init,end_Date_init) {
     var response;
     var request = new XMLHttpRequest();
     request.open("POST", 'http://localhost/qliner_api/insights/getInsights');
     request.setRequestHeader('Content-Type', 'application/json');
     let data = JSON.stringify({
-        "start_date" : start_Date,
-        "end_date" : end_Date
+        "start_date" : start_Date_init,
+        "end_date" : end_Date_init
     });
     request.send(data);
 
@@ -110,7 +119,7 @@ window.onload = function () {
                 }
             },
             title: {
-                text: 'Systen Queue Length'
+                text: 'System Queue Length'
             },
             subtitle: {
                 text: 'Depicts queue lengths by date'
@@ -296,4 +305,51 @@ var serviceee = [];
 
 
     };
+}
+function selectPeriod(){
+var period = document.getElementById('select_period').value
+var start_Date;
+var end_Date;
+
+    if (period == 'today'){
+        document.getElementById('date_picker').style.display = "none";
+
+        var date = currentDate.getDate();
+        var month = currentDate.getMonth(); //Be careful! January is 0 not 1
+        var year = currentDate.getFullYear();
+
+        var dateString = year + "-0" +(month + 1) + "-" + date;
+        start_Date = dateString;
+        end_Date = dateString;
+        initialize(start_Date,end_Date);
+    }else if (period == 'yesterday'){
+        document.getElementById('date_picker').style.display = "none";
+        var date = currentDate.getDate();
+        var month = currentDate.getMonth(); //Be careful! January is 0 not 1
+        var year = currentDate.getFullYear();
+
+        var dateString = year + "-0" +(month + 1) + "-" + (date-1);
+        start_Date = dateString;
+        end_Date = dateString;
+        initialize(start_Date,end_Date);
+    }else if (period == 'lastweek'){
+        document.getElementById('date_picker').style.display = "none";
+        var date = currentDate.getDate();
+        var month = currentDate.getMonth(); //Be careful! January is 0 not 1
+        var year = currentDate.getFullYear();
+
+    
+        start_Date =  year + "-0" +(month + 1) + "-" + (date - 7) ;
+        end_Date =  year + "-0" +(month + 1) + "-" + date;;
+        initialize(start_Date,end_Date);
+    }else if (period == 'custom'){
+        document.getElementById('date_picker').style.display = "block";
+
+    }
+}
+function selectPeriod_datePicker(){
+    var start_Date = document.getElementById("start_date").value;
+    var end_Date = document.getElementById("end_date").value;
+
+    initialize(start_Date,end_Date);
 }
