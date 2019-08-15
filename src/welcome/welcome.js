@@ -21,9 +21,13 @@ ticketingButton.addEventListener('click', function (event) {
 });
 const insightsButton = document.getElementById('insights');
 insightsButton.addEventListener('click', function (event) {
-    const modalPath = path.join('file://', __dirname, '../insights/insights.html');
+    const modalPath = path.join('file://', __dirname, '../insights/login.html');
     let win = new BrowserWindow({
+        webPreferences:{
+            nodeIntegration:true,
+            webSecurity:false,
 
+        }
     })
     win.on('close', function () { win = null })
     win.loadURL(modalPath)
