@@ -31,12 +31,22 @@ window.onload =initialize (start_Date_init,end_Date_init);
         var customers_in_queue;
         var service_times;
         var queue_lengths_single;
+        var  average_queue_length;
+        var mean_today_servicetime;
        if (response.status  == "true"){
           server_utilizations = response.server_utilization;
           customers_in_queue = response.customers;
           service_times = response.service_times;
           queue_lengths_single = response.queue_lengths;
+          average_queue_length=response.average_queue_length;
+          average_waiting_time=response.average_waiting_time;
+          mean_today_servicetime=response.average_service_time;
        }
+
+       document.getElementById("avg_queue_length").innerText = average_queue_length;
+       document.getElementById("avg_waiting_time").innerText = average_waiting_time ;
+       document.getElementById("avg_service_time").innerText = mean_today_servicetime ;
+
       
         var categories = [];
         var utils= [];
