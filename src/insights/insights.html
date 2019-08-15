@@ -265,60 +265,16 @@
       </div>
 
           </script>
-        </div>
-        <!-- </div> -->
-
-
-      </div>
+       
 
       <div class="card-footer mb-3 small text-muted">Updated yesterday at 11:59 PM</div>
-      <!--        <div>-->
-      <!--          <div class="container">-->
-      <!--            <div class='col-md-3'>-->
-      <!--                <div class="form-group">-->
-      <!--                    <div class='input-group date' id='datetimepicker6'>-->
-      <!--                        <input type='text' class="form-control" />-->
-      <!--                        <span class="input-group-addon">-->
-      <!--                            <span class="glyphicon glyphicon-calendar"></span>-->
-      <!--                        </span>-->
-      <!--                    </div>-->
-      <!--                </div>-->
-      <!--            </div>-->
-      <!--            <div class='col-md-3'>-->
-      <!--                <div class="form-group">-->
-      <!--                    <div class='input-group date' id='datetimepicker7'>-->
-      <!--                        <input type='text' class="form-control" />-->
-      <!--                        <span class="input-group-addon">-->
-      <!--                            <span class="glyphicon glyphicon-calendar"></span>-->
-      <!--                        </span>-->
-      <!--                    </div>-->
-      <!--                </div>-->
-      <!--            </div>-->
-      <!--        </div>-->
-      <!--        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">-->
-      <!--        // $('#datetimepicker6').data("DateTimePicker").FUNCTION() -->
-      <!--        -->
-      <!--                $('#datetimepicker6').datetimepicker();-->
-      <!--                $('#datetimepicker7').datetimepicker({-->
-      <!--                    useCurrent: false //Important! See issue #1075-->
-      <!--                });-->
-      <!--                $("#datetimepicker6").on("dp.change", function (e) {-->
-      <!--                    $('#datetimepicker7').data("DateTimePicker").minDate(e.date);-->
-      <!--                });-->
-      <!--                $("#datetimepicker7").on("dp.change", function (e) {-->
-      <!--                    $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);-->
-      <!--                });-->
-      <!--            -->
-      <!--        </script>-->
-      <!--        </div>-->
-      <!-- </div> -->
-
       <div class="container-fluid mb-3">
-        <div class="card-header">
+        <div class="card">
+          <div class="card-header">
           <i class="fas fa-chart-area"></i>
           Queue Length</div>
 
-        <div id="Queue_lengths" style="min-width: 310px; height: 400px; margin: 0 auto">
+        <div id="service_times" >
 
           <script>
             document.addEventListener('DOMContentLoaded', function () {
@@ -329,6 +285,43 @@
         </div>
 
 
+      </div>
+
+         <div class="card">
+          <div class="card-header">
+          <i class="fas fa-chart-area"></i>
+          Queue Length</div>
+
+        <div id="service_times" >
+
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+
+            });
+
+          </script>
+        </div>
+
+
+      </div>
+
+      <div class="card">
+          <div class="card-header">
+          <i class="fas fa-chart-area"></i>
+          Queue Length single</div>
+
+        <div id="queue_lengths_Single" >
+
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+
+            });
+
+          </script>
+        </div>
+
+
+      </div>
       </div>
       <div class=" container-fluid ">
         <div class="row">
