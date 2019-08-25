@@ -43,9 +43,9 @@ function initialize(start_Date_init, end_Date_init) {
             mean_today_servicetime = response.average_service_time;
         }
 
-        document.getElementById("avg_queue_length").innerText = average_queue_length;
-        document.getElementById("avg_waiting_time").innerText = average_waiting_time;
-        document.getElementById("avg_service_time").innerText = mean_today_servicetime;
+        document.getElementById("avg_queue_length").innerText = average_queue_length + " person(s) ";
+        document.getElementById("avg_waiting_time").innerText = average_waiting_time  + " minute(s) ";
+        document.getElementById("avg_service_time").innerText = mean_today_servicetime  + "  minute(s) ";
 
 
         var categories = [];
@@ -357,7 +357,7 @@ function selectPeriod() {
         var year = currentDate.getFullYear();
 
 
-        start_Date = year + "-0" + (month + 1) + "-" + (date - 7);
+        start_Date = year + "-0" + (month + 1) + "-" + (date - 6);
         end_Date = year + "-0" + (month + 1) + "-" + date;;
         initialize(start_Date, end_Date);
     } else if (period == 'custom') {

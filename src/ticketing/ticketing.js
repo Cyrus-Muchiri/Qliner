@@ -14,10 +14,10 @@ function newCustomer(service) {
                 nodeIntegration: true
             },
             width : 400,
-            height: 350,
+            height: 400,
         
         });
-      //  win.setMenu(null)
+       win.setMenu(null)
         //condition to set service ids
         var service_id;
         if (service == 'pharmacy'){

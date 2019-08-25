@@ -19,8 +19,7 @@ function login(event) {
         response = JSON.parse(request.responseText);
         console.log(response);
         if (response.status == "true") {
-            console.log('hjdsjdj');
-      
+                
                 const modalPath = path.join('file://', __dirname, '../insights/insights.html');
                 let win = new BrowserWindow({
             
