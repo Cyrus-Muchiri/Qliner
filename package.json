@@ -28,6 +28,6 @@
     "bower": "^1.8.8",
     "highcharts": "^7.1.2",
     "highcharts-export-server": "^2.0.24",
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   }
 }
